@@ -1,0 +1,6 @@
+pip install flask
+pip install sounddevice
+pip install scipy
+pip install SpeechRecognition
+pip install pyaudio
+pip install git+https://github.com/openai/whisper.git
