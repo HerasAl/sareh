@@ -4,3 +4,4 @@ pip install scipy
 pip install SpeechRecognition
 pip install pyaudio
 pip install git+https://github.com/openai/whisper.git
+pip install musicdl
