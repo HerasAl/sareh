@@ -4,7 +4,7 @@ import os
 import requests
 
 def music(song):
-    config = {'logfilepath': 'musicdl.log', 'savedir': 'downloaded', 'search_size_per_source': 20, 'proxies': {}}
+    config = {'logfilepath': '.musicdl.log', 'savedir': 'downloaded', 'search_size_per_source': 20, 'proxies': {}}
     target_srcs = [
         'joox'
     ]
@@ -35,5 +35,3 @@ def downSave(data):
     with open(folder + "/" + data['cancion'] + ".mp3", 'wb') as file:
         file.write(cancion.content)
     return {'status': 1}
-    
-    
