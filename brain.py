@@ -1,7 +1,6 @@
 from flask import Flask, render_template
 from flask import request
 
-
 from asistente import sentidos
 from module import musica
 
@@ -11,7 +10,7 @@ app = Flask(__name__)
 def main():
     #objeto = sentidos.oido()
     #comando = objeto.escuchar()
-    return "<p>SAREH</p>"
+    return render_template("init.html")
 
 @app.route('/login', methods=['GET'])
 def log():
