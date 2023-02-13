@@ -1,3 +1,8 @@
+require portaudio
+#Para correr en RHEL
+yum install portaudio-devel alsa-lib-devel portaudio python3-devel
+
+
 pip install flask
 pip install sounddevice
 pip install scipy
