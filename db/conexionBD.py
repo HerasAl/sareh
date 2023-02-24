@@ -1,13 +1,16 @@
-import mysql.connector
+import pymysql
 
-def connectionBD():
-    db = mysql.connector.connect(
-        host = "localhost",
-        user = "root",
-        passwd = "heras12345",
-        database = "sareh",
-    )
-    if db:
-        return db
-    else:
-        return None
+
+def obtener_conexion():
+
+    try:
+        conexion = pymysql.connect(
+            host='192.168.0.103',
+            user='root',
+            password='heras12345',
+            db='sareh'
+        )
+        print("Conectados")
+        return conexion
+    except (pymysql.err.OperationalError, pymysql.err.InternalError) as e:
+        print("Error: ", e)
