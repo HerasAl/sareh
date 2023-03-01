@@ -1,7 +1,6 @@
 from flask import Flask, render_template, url_for
 from flask import request
 
-from asistente import sentidos
 from module import musica
 from db.funciones import insertUser, logueo
 from flask_cors import CORS
@@ -9,26 +8,11 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-@app.errorhandler(404)
-def not_found():
-    if 'conectado' in session:
-        return redirect(url_for('inicio'))
-    else:
-        return render_template("login.html")
-
 @app.route('/', methods=['GET'])
 def main():
     #objeto = sentidos.oido()
     #comando = objeto.escuchar()
     return render_template("init.html")
-
-@app.route('/login', methods=['GET'])
-def log():
-    return render_template("login.html")
-
-@app.route('/registrar', methods=['GET'])
-def reg():
-    return render_template("register.html")
 
 @app.route("/music", methods=['POST'])
 def media():
@@ -57,3 +41,10 @@ def login():
         })
     else:
         return({'msg': "tas mal chavito"})
+    
+
+
+#NLP
+@app.route('/translate', methods=['GET'])
+def method_name():
+    nlp.en_es('Hello')
